@@ -3,8 +3,10 @@ import requests
 import json
 import hashlib
 
+site = input("Digite a URL da requisição: ")
+url = input("Digite a URL da submissão: ")
+
 # Fazendo requisição HTTP e transformando json em dicionario
-site = "https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=2164c8f5a19b4c8a2ebf4db96e716e0afa965c1d"
 r = requests.get(site)
 dic_request = json.loads(r.text)
 
@@ -27,7 +29,6 @@ with open('answer.json', 'w') as outfile:
     json.dump(dic_request, outfile)
 
 # Enviando submissão
-url = "https://api.codenation.dev/v1/challenge/dev-ps/submit-solution?token=2164c8f5a19b4c8a2ebf4db96e716e0afa965c1d"
 files = {'answer': ('answer.json', open('answer.json', 'rb'))}
 r = requests.post(url, files=files)
 
