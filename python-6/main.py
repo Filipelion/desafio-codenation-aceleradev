@@ -24,32 +24,35 @@ class Employee(ABC, Department):
 class Manager(Employee):
     def __init__(self, code, name, salary):
         super().__init__(code, name, salary)
-        self._departament = Department('managers', 1)
-
+        self.__departament = Department('managers', 1)
 
     def calc_bonus(self):
         return self.salary * 0.15
 
-    #@property
     def get_department(self):
-        return self._departament.name
+        return self.__departament.name
 
     def set_department(self, name):
-        self._departament.name = name
+        self.__departament.name = name
 
 
 class Seller(Manager):
     def __init__(self, code, name, salary):
         super().__init__(code, name, salary)
+        self.department = Department('sellers', 2)
         self.__sales = 0
 
-    #@property
+    def calc_bonus(self):
+        return self.__sales * 0.15
+
     def get_sales(self):
         return self.__sales
 
     def put_sales(self, value):
         self.__sales += value
 
-    def calc_bonus(self):
-        return self.__sales * 0.15
+    def get_department(self):
+        return self.department.name
 
+    def set_department(self, name):
+        self.department.name = name
