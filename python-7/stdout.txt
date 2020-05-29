@@ -1,0 +1,12 @@
+============================= test session starts ==============================
+platform linux -- Python 3.6.9, pytest-3.6.2, py-1.5.3, pluggy-0.6.0 -- /home/filipe/codenation/python-5/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/filipe/codenation/python-7, inifile:
+collecting ... collected 3 items
+
+test_main.py::test_get_temperature_by_lat_lng[-14.235004--51.92528-62-16] PASSED [ 33%]
+test_main.py::test_get_temperature_by_lat_lng[70.8565444-45.644562-86-30] PASSED [ 66%]
+test_main.py::test_get_temperature_by_lat_lng[90.7455683--35.334732-70-21] PASSED [100%]
+
+------- generated xml file: /home/filipe/codenation/python-7/output.xml --------
+=========================== 3 passed in 0.10 seconds ===========================
