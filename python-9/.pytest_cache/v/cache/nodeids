@@ -1,0 +1,8 @@
+[
+  "test_submit.py::TestChallenge9::test_agent",
+  "test_submit.py::TestChallenge9::test_event",
+  "test_submit.py::TestChallenge9::test_event1",
+  "test_submit.py::TestChallenge9::test_group",
+  "test_submit.py::TestChallenge9::test_user",
+  "test_submit.py::TestChallenge9::test_user_group"
+]
