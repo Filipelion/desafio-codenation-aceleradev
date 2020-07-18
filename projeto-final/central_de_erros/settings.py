@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'api',
+    'api'
 ]
 
 MIDDLEWARE = [
@@ -67,6 +67,31 @@ TEMPLATES = [
         },
     },
 ]
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(asctime)s %(message)s'
+        },
+    },
+    'handlers': {
+        'db': {
+            'level': 'DEBUG',
+            'class': 'api.db_log_handler.DatabaseLogHandler'
+        }
+    },
+    'loggers': {
+        'db_logger': {
+            'handlers': ['db'],
+            'level': 'DEBUG'
+        }
+    }
+}
 
 WSGI_APPLICATION = 'central_de_erros.wsgi.application'
 
